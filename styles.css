@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro:400,900&display=swap');
+
 /*Global styles*/
 *,
 *::before,
-*::after{
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root{
+:root {
     --main-font: 'Source Sans Pro', sans-serif;
     --secondary-font: 'Herr Von Muellerhoff', cursive;
     --body-font: 'Cabin', sans-serif;
@@ -16,3 +17,151 @@
     --secondary-font-color: #c59d5f;
     --body-font-color: #515151;
 }
+
+html {
+    font-family: var(--body-font);
+    /* 1rem = 10px */
+    font-size: 10px;
+    color: var(--body-font-color);
+    scroll-behavior: smooth;
+}
+
+section {
+    /* 39px */
+    padding: 3.9rem 0;
+}
+
+img {
+    /* prevent overflow / stay inside parent */
+    width: 100%;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+.container {
+    width: 100%;
+    /* 1225px */
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+}
+
+/* HEADER STYLES START */
+
+header {
+    width: 100%;
+    /* header stays on top because transparent nav will be used */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .5), transparent);
+}
+
+.nav {
+    height: 7.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-toggle {
+    font-size: 2.2rem;
+    position: absolute;
+    top: 50%;
+    /* centered in header perfectly */
+    transform: translateY(-50%);
+    right: 2.5rem;
+    cursor: pointer;
+    /* stay on top of everything */
+    z-index: 1500;
+    color: white;
+}
+
+.fa-times {
+    display: none;
+}
+
+.nav-list {
+    list-style: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100vh;
+    background-color: var(--main-font-color-dark);
+    padding: 4.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* behind hamburger menu icon */
+    z-index: 1250;
+    /* toggle animation */
+    transform: translateX(-100%);
+    transition: transform .5s;
+}
+
+/* background for hamburger menu icon column */
+.nav::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .8);
+    /* javascript to trigger changes in opacity */
+    opacity: 0;
+    /* scale it down to hide it completely */
+    transform: scale(0);
+    transition: opacity .5s;
+    /* stay behind nav-list */
+    z-index: 1000;
+}
+
+/* add .open through javascript to body tag and reveal X icon */
+.open .fa-times {
+    display: block;
+}
+
+/* add .open through javascript to body tag and hide hamburger icon */
+.open .fa-bars {
+    display: none;
+}
+
+/* add .open through javascript to body tag and reset navigation to initial state */
+.open .nav-list {
+    transform: translateX(0);
+}
+
+.open .nav::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.nav-item {
+    border-bottom: 2px solid rgba(255, 255, 255, .3);
+}
+
+.nav-link {
+    display: block;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    margin-right: -2px;
+    transition: color .3s linear;
+}
+
+.nav-link:hover {
+    color: var(--secondary-font-color);
+}
+
+/* HEADER STYLES END HERE */
