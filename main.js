@@ -12,3 +12,5 @@ let body = selectHamburger('body');
 menuToggler.addEventListener('click', () => {
   body.classList.toggle('open');
 })
+
+

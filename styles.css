@@ -105,7 +105,7 @@ header {
     z-index: 1250;
     /* toggle animation */
     transform: translateX(-100%);
-    transition: transform .5s;
+    transition: all .3s;
 }
 
 /* background for hamburger menu icon column */
@@ -306,7 +306,7 @@ header {
 .global-headline .sub-headline {
     letter-spacing: -1px;
     line-height: .42;
-    margin-bottom: 1.5rem;
+    margin-bottom: .8rem;
 }
 
 .restaurant-info {
@@ -352,5 +352,261 @@ header {
 }
 
 /* DISCOVER OUR STORY STYLES END HERE */
+
 /* TASTEFUL RECIPES STYLES END HERE */
+
+.tasteful-recipes {
+    background: url("images/tasteful-recipes.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.between {
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+}
+
 /* TASTEFUL RECIPES STYLES END HERE */
+
+/* DISCOVER OUR MENU STYLES END HERE */
+.image-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+}
+
+.discover-our-menu .restaurant-description {
+    padding-top: 3rem;
+    margin-bottom: 0;
+}
+
+/* DISCOVER OUR MENU STYLES END HERE */
+
+/* The PERFECT BLEND STYLES END HERE */
+
+.perfect-blend {
+    background: url("images/perfect-blend.jpg") center no-repeat;
+    background-size: cover;
+}
+
+/* The PERFECT BLEND STYLES END HERE */
+
+/* Footer styles */
+
+footer {
+    padding: 7.9rem 0;
+    background-color: #121212;
+    color: #FFF;
+    text-align: center;
+    position: relative;
+}
+
+.back-to-top {
+    width: 7rem;
+    height: 7rem;
+    background-color: #121212;
+    position: absolute;
+    top: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
+.back-to-top i {
+    display: block;
+    color: #fff;
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+.footer-content {
+    /* for animation */
+    /* overflow: hidden; */
+}
+
+.footer-content h4 {
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 3px;
+    margin-bottom: 3rem;
+}
+
+.footer-content .asterisk {
+    margin: 2.4rem 0;
+}
+
+.footer-content-about {
+    margin-bottom: 5.4rem;
+}
+
+.footer-content-about p {
+    line-height: 2;
+}
+
+.social-icons {
+    list-style: none;
+    margin-bottom: 5.4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons i {
+    font-size: 2rem;
+    color: #FFF;
+    padding: .8rem 2rem;
+    opacity: .4;
+    transition: color .3s ease-in-out;
+}
+
+.social-icons i:hover,
+.social-icons i:focus {
+    color: var(--secondary-font-color);
+}
+
+.newsletter-form {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.newsletter-input {
+    width: 100%;
+    max-width: 25rem;
+    padding: 1rem;
+    border-radius: .4rem;
+}
+
+.newsletter-btn {
+    border: none;
+    background-color: transparent;
+    color: var(--main-font-color-dark);
+    font-size: 1.6rem;
+    cursor: pointer;
+    padding: 1px .6rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 20.5rem;
+}
+
+/* media queries */
+
+@media screen and (min-width: 900px) {
+    section {
+        padding: 7.9rem;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav {
+        justify-content: space-between;
+    }
+
+    .nav-list {
+        position: initial !important;
+        width: initial !important;
+        height: initial !important;
+        background-color: transparent;
+        padding: 0;
+        justify-content: initial;
+        flex-direction: row;
+        transform: initial !important;
+        transition: initial !important;
+
+    }
+
+
+    .nav-item {
+        margin: 0 2.4rem;
+        border: none;
+    }
+
+    .nav-item:last-child {
+        margin-right: 0;
+    }
+
+    .nav-link {
+        font-size: 1.3rem;
+    }
+
+    .active {
+        position: relative;
+    }
+
+    .active::before {
+        position: absolute;
+        content: "";
+        height: 2px;
+        background-color: #FFF;
+        width: 100%;
+        left: 0;
+        bottom: -3px;
+    }
+
+    .sub-headline {
+        font-size: 10rem;
+    }
+
+    .first-letter {
+        font-size: 12.2rem;
+    }
+
+    .headline {
+        font-size: 4.7rem;
+        letter-spacing: .8rem;
+    }
+
+    .line {
+        max-width: 11.4rem;
+    }
+
+    .restaurant-info {
+        display: flex;
+        align-items: center;
+    }
+
+    /* make divs / boxes same size */
+    .restaurant-info>div {
+        flex: 1;
+    }
+
+    .padding-right {
+        padding-right: 7rem;
+    }
+
+    .footer-content {
+        max-width: 77.5rem;
+        margin: auto;
+    }
+
+    .footer-content-about {
+        max-width: 51.3rem;
+        margin: 0 auto 5.4rem;
+    }
+
+    .footer-content-divider {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .social-media,
+    .newsletter-form {
+        width: 100%;
+        max-width: 27.3rem;
+        margin: 0 1rem;
+    }
+
+    .social-icons i {
+        opacity: 1;
+    }
+
+    .newsletter-btn {
+        margin-left: 15.5rem;
+    }
+
+
+}
